@@ -2,6 +2,8 @@
 
 Control a robotic arm using Arduino and dual joysticks.
 
+![Complete Setup](gallery/complete-setup.jpeg)
+
 ## Features
 
 - 4-axis robotic arm control (base rotation, shoulder, elbow, claw)
