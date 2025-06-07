@@ -15,8 +15,8 @@ Control a robotic arm using Arduino and dual joysticks.
 - Arduino UNO
 - Sensor Shield V5.0
 - 2x HW-504 joysticks
-- 4x MG90S servos (recommended over SG90)
-- Robotic arm frame that allows 4 for servos
+- 4x MG90S servos (recommended over SG90, they suck)
+- Robotic arm frame that allows for 4 servos
 - Breadboard (optional)
 - Jumper cables
 
@@ -46,7 +46,3 @@ Control a robotic arm using Arduino and dual joysticks.
 ## Code Overview
 
 The main logic is in [src/ardu_arm.ino](src/ardu_arm.ino). It reads analog values from the joysticks and moves each servo accordingly.
-
-## License
-
-MIT License
