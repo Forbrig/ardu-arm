@@ -1,7 +1,7 @@
 #include <Servo.h>
 
 // pins
-const int rotatePin = 8;
+const int basePin = 8;
 const int shoulderPin = 9;
 const int elbowPin = 10;
 const int clawPin = 11;
@@ -12,7 +12,7 @@ const int joystick1RightPin = A1;
 const int joystick2LeftPin = A5;
 const int joystick2RightPin = A4;
 
-Servo rotateServo;
+Servo baseServo;
 Servo shoulderServo;
 Servo elbowServo;
 Servo clawServo;
@@ -22,13 +22,13 @@ const int angleStrength = 2;
 
 void setup() {
   // attach pins to servos
-  rotateServo.attach(rotatePin);
+  baseServo.attach(basePin);
   shoulderServo.attach(shoulderPin);
   elbowServo.attach(elbowPin);
   clawServo.attach(clawPin);
 
   // reset angles
-  rotateServo.write(defaultAngle);
+  baseServo.write(defaultAngle);
   shoulderServo.write(defaultAngle);
   elbowServo.write(defaultAngle);
   clawServo.write(defaultAngle);
@@ -41,11 +41,11 @@ void loop() {
   int x2Value = analogRead(joystick2LeftPin);
   int y2Value = analogRead(joystick2RightPin);
 
-  int currentRotateAngle = rotateServo.read();
-  if (y1Value > 700 && currentRotateAngle < 180) {
-    rotateServo.write(currentRotateAngle + angleStrength);
-  } else if (y1Value < 400 && currentRotateAngle > 0) {
-    rotateServo.write(currentRotateAngle - angleStrength);
+  int currentBaseAngle = baseServo.read();
+  if (y1Value > 700 && currentBaseAngle < 180) {
+    baseServo.write(currentBaseAngle + angleStrength);
+  } else if (y1Value < 400 && currentBaseAngle > 0) {
+    baseServo.write(currentBaseAngle - angleStrength);
   }
 
   int currentShoulderAngle = shoulderServo.read();
